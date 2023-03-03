@@ -1,46 +1,26 @@
-  // set the default precision for float variables
-  precision mediump float;
+precision mediump float;
 
-// uniform float uTime;
-uniform vec2 uResolution;
+varying vec3 pos;
+varying vec3 normalInterp;
 
-varying vec2 vTexCoord;
+const vec3 lightPos = vec3(200,60,100);
+const vec3 ambientColor = vec3(0.2, 0.0, 0.0);
+const vec3 diffuseColor = vec3(0.5, 0.0, 0.0);
+const vec3 specColor = vec3(1.0, 1.0, 1.0);
 
-uniform sampler2D tex;
-uniform sampler2D coolingMap;
-
-float deltay=1.;
-
-float rem(float x, float y) {
-	x=abs(x);
-	y=abs(y);
-	for (int i=0; i>-1; i+=0) {
-	  if (x<y) {
-	    break;
-	  }
-	  x-=y;
-	}
-	return x;
-}
-float sq(float x) {
-	return pow(x, 2.);
-}
 void main() {
-	float width = uResolution.x;
-	float height = uResolution.y;
-	
-	float x=vTexCoord.x*width;
-	float y=height-vTexCoord.y*height;
-	float val=(
-	  texture2D(tex, vec2(x/width, (y-1.)/height)).r+
-	  texture2D(tex, vec2((x+1.)/width, y/height)).r+
-	  texture2D(tex, vec2(x/width, (y+1.)/height)).r+
-	  texture2D(tex, vec2((x-1.)/width, y/height)).r
-	  )/4.;
-	val-=texture2D(coolingMap, vec2(x/width, rem(y/height, 1.))).r/5.;
-	float arg=sqrt(sq(x-width/2.)+sq(y-height/2.));
-	if (arg>height/4.&&arg<height/4.+5.) {
-	  val=1.;
+	vec3 normal = normalize(cross(dFdy(pos), dFdx(pos)));
+	vec3 lightDir = normalize(lightPos - pos);
+
+	float lambertian = max(dot(lightDir,normal), 0.0);
+	float specular = 0.0;
+
+	if(lambertian > 0.0) {
+		vec3 viewDir = normalize(-pos);
+		vec3 halfDir = normalize(lightDir + viewDir);
+		float specAngle = max(dot(halfDir, normal), 0.0);
+		specular = pow(specAngle, 16.0);
 	}
-	gl_FragColor=vec4(vec3(val, (val-0.3), (val-0.6)), 1.);
+
+	gl_FragColor = vec4(ambientColor + lambertian * diffuseColor + specular * specColor, 1.0);
 }

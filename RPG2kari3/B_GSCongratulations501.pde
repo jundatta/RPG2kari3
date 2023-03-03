@@ -1,6 +1,6 @@
 // コングラチュレーション画面
 //
-// こちらがオリジナルです。
+// オリジナルはこちらです。
 // 【作者】Sayamaさん
 // 【作品名】SeasonalSnowDome
 // https://openprocessing.org/sketch/803047
