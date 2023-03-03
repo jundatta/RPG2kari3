@@ -1,0 +1,20 @@
+【2021/09/12】
+（PC-8001さんに教えてもらったにゃ！）
+（下にあるp5.min.jsをこののp5.min.jsで上書きにゃ＼(^_^)／）
+
+"C:\Users\User\Documents\Processing\modes\p5jsMode\template\libraries\p5.min.js"
+
+
+※入れ替えたら治まった現象
+https://openprocessing.org/sketch/1104382をProcessing 4 IDEに持ってきて動かすと
+
+[35]  pg.rect(-width/2, -height/2, width, height);
+
+で落ちました。
+
+。。。問題自体はこれ（by PC-8001さん）
+
+https://github.com/processing/p5.js/issues/4983
+
+p5.Graphics throws error if try to draw shape before specifying a fill or stroke (v1.2.0) #4983
+（p5.Graphicsで、フィルやストロークを指定する前に形状を描画しようとするとエラーが発生する (v1.2.0) #4983）

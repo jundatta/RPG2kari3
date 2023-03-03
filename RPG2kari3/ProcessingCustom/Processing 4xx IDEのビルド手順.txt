@@ -1,0 +1,49 @@
+【Processing 4.x.x IDEのビルド手順】2022/08/13
+
+　https://www.nicovideo.jp/watch/sm40160668
+　https://youtu.be/QEW2xD99Z-M
+
+1. Processing 4のソースをとってくる。
+
+（１）https://github.com/processing/processing4/releases/
+　　　から「Source code (zip)」をダウンロードして展開する。
+
+    （例）C:\に展開してできたC:\processing4-processing-1286-4.0.1フォルダを
+　　　　　C:\processing4-masterにフォルダ名を変える。
+
+2. Java SE 17をとってきてインストールする。
+
+（１）https://www.oracle.com/java/technologies/downloads/
+　　　から「Windows」の「x64 MSI Installer」をダウンロードしてインストールする。
+
+　⇒https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.msi
+
+3. ant（Javaアプリケーションのビルドの自動化ツール）をとってきて使えるようにする。
+
+（１）https://ant.apache.org/bindownload.cgi（Binary Distributions）から
+　　　ダウンロードして展開する。
+
+　⇒https://dlcdn.apache.org//ant/binaries/apache-ant-1.10.12-bin.zip
+
+    （例）C:\に展開する。
+　　　　　C:\apache-ant-1.10.12フォルダになる。
+
+（２）antを動かすためのパスを通す。
+    （例）C:\apache-ant-1.10.12\bin
+
+4. コマンドプロンプトでProcessing 4をビルドする。
+
+（例）ビルド
+        cd C:\processing4-master\build
+        ant run
+（例）クリーン（ビルド前にきれいにする）
+        ant clean
+
+※インストールビルド前とインストールビルド後のディスク容量の差
+　⇒約1.7[GB]
+
+======
+
+【ビルドしたProcessing4 IDEの実行】
+
+C:\processing4-master\build\windows\work\processing.exeをダブルクリックする。
