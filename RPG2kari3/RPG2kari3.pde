@@ -22,7 +22,7 @@ void setup() {
 
   P5JS.setup(this);
 
-  size(500, 800, P3D);
+  size(540, 960, P3D);
   //  printMatrix();
   background(0);
   // こちらを参考にさせて頂きました。
@@ -50,7 +50,7 @@ void setup() {
   //gGameStack = new Viewer8001GameStack(this);
 
   gGameStack.change(new GameSceneTitle());
-  //gGameStack.change(new GameSceneCongratulations505());
+  //gGameStack.change(new GameSceneCongratulations506());
 }
 
 void setupMinim(PApplet applet) {

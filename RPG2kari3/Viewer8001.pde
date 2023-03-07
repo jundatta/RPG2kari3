@@ -66,7 +66,7 @@ import java.util.stream.Collectors;
   }
 
   void settings() {
-    size(700, 800);
+    size(700, 960);
     noLoop();
   }
 
