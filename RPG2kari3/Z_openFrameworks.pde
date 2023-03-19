@@ -174,6 +174,9 @@ void ofRotateY(float degrees) {
 void ofRotateZ(float degrees) {
   rotateZ(radians(degrees));
 }
+void ofRotate(float deg) {
+  rotate(radians(deg));
+}
 void ofSeedRandom(int val) {
   randomSeed(val);
 }
