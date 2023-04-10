@@ -1,12 +1,12 @@
-# 【遊び方】2023/03/20
+# 【遊び方】2023/04/10
 
 https://www.youtube.com/watch?v=RBkOlsDzWCo
 
 ##### １．ライブ配信でいじってるRPG2kari3のダウンロード先です。
-～コングラチュレーション画面501～520
+～コングラチュレーション画面501～530
 
 ギガファイル便
-https://xgf.nu/cLpD
+https://xgf.nu/uFw2
 
 ⇒カスタマイズしたProcessing IDEは4.2対応です。
 
