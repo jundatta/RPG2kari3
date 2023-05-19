@@ -34,7 +34,6 @@ class GameSceneCongratulations535 extends GameSceneCongratulationsBase {
   @Override void setup() {
     pg = createGraphics(orgW, orgH);
     pg.beginDraw();
-    pg.smooth();
 
     //textFont(createFont("ArialMT-48", 12));
     pg.textAlign(CENTER, CENTER);
